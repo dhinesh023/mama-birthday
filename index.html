@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🎂 Happy Birthday MAMA ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#ff9a9e,#fad0c4,#fad0c4,#ffdde1);
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+}
+
+.container{
+    text-align:center;
+    z-index:2;
+    padding:20px;
+}
+
+.gift{
+    width:180px;
+    cursor:pointer;
+    transition:.4s;
+}
+
+.gift:hover{
+    transform:scale(1.1);
+}
+
+.card{
+    display:none;
+    animation:fade 1.2s;
+}
+
+.card img{
+    width:230px;
+    height:230px;
+    border-radius:50%;
+    object-fit:cover;
+    border:6px solid white;
+    box-shadow:0 0 25px rgba(0,0,0,.3);
+    margin-bottom:20px;
+}
+
+h1{
+    color:white;
+    font-size:45px;
+    margin-bottom:20px;
+    text-shadow:2px 2px 5px black;
+}
+
+p{
+    color:white;
+    font-size:22px;
+    line-height:38px;
+    max-width:800px;
+    margin:auto;
+    text-shadow:1px 1px 3px black;
+}
+
+button{
+    margin-top:30px;
+    padding:15px 35px;
+    border:none;
+    border-radius:30px;
+    font-size:20px;
+    cursor:pointer;
+    background:white;
+    color:#ff4081;
+    transition:.3s;
+    font-weight:bold;
+}
+
+button:hover{
+    background:#ff4081;
+    color:white;
+    transform:scale(1.08);
+}
+
+.heart{
+    position:absolute;
+    animation:fly linear infinite;
+}
+
+@keyframes fly{
+0%{
+transform:translateY(100vh);
+opacity:1;
+}
+100%{
+transform:translateY(-120vh);
+opacity:0;
+}
+}
+
+@keyframes fade{
+from{
+opacity:0;
+transform:scale(.5);
+}
+to{
+opacity:1;
+transform:scale(1);
+}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<img src="https://cdn-icons-png.flaticon.com/512/3468/3468373.png"
+class="gift"
+id="gift">
+
+<div class="card" id="card">
+
+<img src="mama.png" alt="Mama">
+
+<h1>🎂 Happy Birthday MAMA ❤️</h1>
+
+<p>
+
+💖 என் அன்பான மாமாவுக்கு இனிய பிறந்தநாள் வாழ்த்துக்கள்! 💖
+
+<br><br>
+
+எப்போதும் எங்கள் குடும்பத்திற்கு துணையாக இருந்து,
+அன்பையும் அக்கறையையும் வழங்கும் உங்களுக்கு
+என் மனமார்ந்த நன்றிகள். ❤️
+
+<br><br>
+
+இந்த பிறந்தநாள் உங்கள் வாழ்க்கையில்
+மகிழ்ச்சி, ஆரோக்கியம், அமைதி மற்றும்
+எல்லா வெற்றிகளையும் கொண்டு வரட்டும். 🎂🎉
+
+<br><br>
+
+🌹 Happy Birthday Dear Mama! 🌹
+
+</p>
+
+<button onclick="showMessage()">
+🎁 Click Here
+</button>
+
+</div>
+
+</div>
+
+<!-- Birthday Music -->
+<audio id="music" loop>
+    <source src="birthday.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+
+const gift=document.getElementById("gift");
+const card=document.getElementById("card");
+const music=document.getElementById("music");
+
+gift.onclick=function(){
+
+gift.style.display="none";
+card.style.display="block";
+
+music.play().catch(()=>{});
+
+for(let i=0;i<100;i++){
+
+let heart=document.createElement("div");
+
+heart.className="heart";
+heart.innerHTML="❤️";
+
+heart.style.left=Math.random()*100+"vw";
+heart.style.fontSize=(20+Math.random()*25)+"px";
+heart.style.animationDuration=(3+Math.random()*4)+"s";
+
+document.body.appendChild(heart);
+
+}
+
+}
+
+function showMessage(){
+
+alert("🎂 இனிய பிறந்தநாள் வாழ்த்துக்கள் மாமா! ❤️\n\nஎப்போதும் சந்தோஷமாகவும் ஆரோக்கியமாகவும் நீண்ட ஆயுளுடன் வாழ வாழ்த்துகள்.\n\n❤️ உங்கள் அன்புடன் DHINESH ❤️");
+
+}
+
+</script>
+
+</body>
+</html>
