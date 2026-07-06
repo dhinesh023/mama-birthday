@@ -16,17 +16,16 @@
 body{
     background:linear-gradient(135deg,#ff9a9e,#fad0c4,#fad0c4,#ffdde1);
     min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
     overflow-y:auto;
     overflow-x:hidden;
     padding:20px;
 }
 
 .container{
+    width:100%;
+    max-width:900px;
+    margin:0 auto;
     text-align:center;
-    z-index:2;
     padding:20px;
 }
 
@@ -34,6 +33,8 @@ body{
     width:180px;
     cursor:pointer;
     transition:.4s;
+    display:block;
+    margin:80px auto;
 }
 
 .gift:hover{
@@ -43,12 +44,12 @@ body{
 .card{
     display:none;
     animation:fade 1.2s;
-    padding-bottom:30px;
+    padding-bottom:60px;
 }
 
 .card img{
-    width:230px;
-    height:230px;
+    width:260px;
+    height:260px;
     border-radius:50%;
     object-fit:cover;
     border:6px solid white;
@@ -58,7 +59,7 @@ body{
 
 h1{
     color:white;
-    font-size:45px;
+    font-size:42px;
     margin-bottom:20px;
     text-shadow:2px 2px 5px black;
 }
@@ -92,8 +93,9 @@ button:hover{
 }
 
 .heart{
-    position:absolute;
+    position:fixed;
     animation:fly linear infinite;
+    pointer-events:none;
 }
 
 @keyframes fly{
@@ -117,7 +119,35 @@ opacity:1;
 transform:scale(1);
 }
 }
+
+@media(max-width:768px){
+
+.gift{
+    width:150px;
+    margin:60px auto;
+}
+
+.card img{
+    width:220px;
+    height:220px;
+}
+
+h1{
+    font-size:32px;
+}
+
+p{
+    font-size:18px;
+    line-height:32px;
+}
+
+button{
+    width:100%;
+    font-size:18px;
+}
+}
 </style>
+
 </head>
 
 <body>
@@ -164,9 +194,8 @@ id="gift">
 
 </div>
 
-<!-- Birthday Music -->
 <audio id="music" loop>
-    <source src="birthday.mp3" type="audio/mpeg">
+<source src="birthday.mp3" type="audio/mpeg">
 </audio>
 
 <script>
@@ -179,6 +208,11 @@ gift.onclick=function(){
 
 gift.style.display="none";
 card.style.display="block";
+
+window.scrollTo({
+    top:0,
+    behavior:"smooth"
+});
 
 music.play().catch(()=>{});
 
