@@ -15,11 +15,13 @@
 
 body{
     background:linear-gradient(135deg,#ff9a9e,#fad0c4,#fad0c4,#ffdde1);
-    height:100vh;
+    min-height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
-    overflow:hidden;
+    overflow-y:auto;
+    overflow-x:hidden;
+    padding:20px;
 }
 
 .container{
@@ -41,6 +43,7 @@ body{
 .card{
     display:none;
     animation:fade 1.2s;
+    padding-bottom:30px;
 }
 
 .card img{
